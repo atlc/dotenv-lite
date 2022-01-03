@@ -7,10 +7,11 @@ const config = async () => {
     const entries = buffer
         .toString()
         .split(/\n|\r/)
-        .map(entry => entry.split("="));
+        .map(entry => entry.split("="))
+        .filter(e => e);
 
     for (const [key, value] of entries) {
-        if (!key || !value) return;
+        if (!key || !value || process.env[key]) return;
         const newEnvar = { [key]: value };
         Object.assign(process.env, newEnvar);
     }
