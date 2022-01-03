@@ -1,6 +1,6 @@
 {
     "name": "@atlc/dotenv",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "A lightweight replacement of the popular dotenv module, acting with its default options.",
     "main": "index.js",
     "scripts": {
