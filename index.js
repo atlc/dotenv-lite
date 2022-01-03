@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const config = async () => {
-    const filePath = path.join(process.cwd(), ".env");
+const config = (opts = { path: undefined }) => {
+    const filePath = opts?.path || path.join(process.cwd(), ".env");
     const buffer = fs.readFileSync(filePath);
     const entries = buffer
         .toString()
